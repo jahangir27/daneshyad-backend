@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          
+    "module": "commonjs",                    
+    "strict": false,                           
+    "types": ["node"],                           
+    "allowSyntheticDefaultImports": true,  
+    "esModuleInterop": true,                  
+    "forceConsistentCasingInFileNames": true  ,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false ,
+    "emitDecoratorMetadata": true,
+    "outDir": "Build",
+    "resolveJsonModule": true,
+    "sourceMap": true
+  },
+  "include": ["src/**/*","server.ts"],
+  "exclude": ["node_modules/*", "**/__tests__/*"]
+}
