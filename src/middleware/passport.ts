@@ -9,7 +9,7 @@ passport.use(new OAuth2Strategy({
   tokenURL: `${process.env.SSO_URL}token/`,
   clientID: process.env.SSO_CLIENT_ID,
   clientSecret: process.env.SSO_CLIENT_SECRET,
-  callbackURL: `${process.env.SERVER_ADDRESS}:${process.env.PROXY_SERVICE_PORT}/auth/callback/`
+  callbackURL: `${process.env.SERVER_ADDRESS}/auth/callback/`
 },
   function ( accessToken: any, refreshToken: any, profile: any, cb: any) {
     let user = {
