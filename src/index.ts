@@ -5,6 +5,8 @@ import session from 'express-session';
 import routes from './routes';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
+import bodyParser from 'body-parser';
+import  multer from 'multer';
 
 class Application {
     app = express();
@@ -38,6 +40,11 @@ class Application {
     }
 
     setConfig() {
+        var forms = multer();
+        this.app.use(bodyParser.json());
+        this.app.use(forms.array()); 
+        this.app.use(bodyParser.urlencoded({ extended: true }));
+
         this.app.use(cookieParser(process.env.SSO_CLIENT_SECRET));
         this.app.use(session({
             resave: false,
