@@ -6,7 +6,7 @@ class Group {
         
         const url = `${process.env.FARAPOD_SERVER_ADDRESS}api/group/members/${groupId}`;
         
-        const addMemberResult:any = await Common.call("POST", url, 
+        const addMemberResult:any = await Common.call("PUT", url, 
                 {
                     _token_: process.env.DANESHYAD_API_TOKEN,
                     _token_issuer_: 1,
